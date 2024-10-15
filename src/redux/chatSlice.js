@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   messages: [],
-  currentUser: 'User1', // Can simulate another user for message reception
+  currentUser: 'User1', 
 };
 
 export const chatSlice = createSlice({

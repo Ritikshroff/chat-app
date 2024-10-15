@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { sendMessage, receiveMessage } from '../redux/chatSlice';
 import SendIcon from '@mui/icons-material/Send';  // Import Send icon
 
-// Chat header with profile picture, name, and status
+//profile picture, name, and status
 const ChatHeader = ({ profilePic, name, isActive }) => {
   return (
     <Box
@@ -14,11 +14,11 @@ const ChatHeader = ({ profilePic, name, isActive }) => {
         padding: '8px 16px',
         borderBottom: '1px solid #ccc',
         backgroundColor: '#f5f5f5',
-        position: 'fixed', // Fix the header to the top
+        position: 'fixed', 
         top: 0,
         left: 0,
         right: 0,
-        zIndex: 1000, // Ensure it stays on top of other elements
+        zIndex: 1000, 
         height: '60px',
       }}
     >
@@ -28,7 +28,7 @@ const ChatHeader = ({ profilePic, name, isActive }) => {
         <Typography
           variant="body2"
           sx={{
-            color: isActive ? 'green' : 'red', // Dynamic color for active/inactive status
+            color: isActive ? 'green' : 'red', 
             fontWeight: isActive ? 'bold' : 'normal',
           }}
         >
@@ -39,7 +39,7 @@ const ChatHeader = ({ profilePic, name, isActive }) => {
   );
 };
 
-// Input section for typing and sending messages
+
 const MessageInput = () => {
   const [text, setText] = useState('');
   const dispatch = useDispatch();
@@ -49,7 +49,7 @@ const MessageInput = () => {
 
     dispatch(sendMessage({ text, timestamp: Date.now() }));
 
-    // Simulate bot response
+
     setTimeout(() => {
       dispatch(receiveMessage({ text: 'This is an automated reply.', timestamp: Date.now() }));
     }, 1000);
@@ -111,7 +111,7 @@ const MessageInput = () => {
   );
 };
 
-// Chat messages display component
+
 const ChatMessages = ({ messages }) => {
   return (
     <Box
